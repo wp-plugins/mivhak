@@ -1,0 +1,31 @@
+<link id="skin-css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Mivhak\CSS_URL; ?>/mivhak.min.css" />
+<style>.prettyprint { font-size: 14px }</style>
+<p style="text-align: center; font-weight: bold">Live Preview</p>
+<pre class="prettyprint linenums:24 lang-java">
+class Human
+{
+    /**
+     * The human's age.
+     */
+    private int age;
+    
+    public Human() { this.age = 0; }
+    
+    public void birthday()
+    {
+        // Increment age by 1;
+        this.age++;
+        System.out.printf("Happy Birthday! you are now %i years old", this.age);
+    }
+}
+</pre>
+
+<script>
+    jQuery('#skin-css').attr('href', '<?php echo Mivhak\CSS_URL; ?>/skins/' + jQuery('#skin').val());
+    jQuery('#skin').change(function(){
+        jQuery('#skin-css').attr('href', '<?php echo Mivhak\CSS_URL; ?>/skins/' + jQuery('#skin').val());
+    });
+    var mivhak_settings = { show_meta:true };
+</script>
+<script src="<?php echo Mivhak\JS_URL; ?>/mivhak.min.js"></script>
