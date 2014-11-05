@@ -2,8 +2,8 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 3.9.2
-Stable tag: 1.0.4
+Tested up to: 4.0
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ LaTex, Visual Basic, CHDL, Wiki, XQ, YAML
 
 == Changelog ==
 
+= 1.0.5 =
+* (UPDATE) Amarkal framework update
+
 = 1.0.4 =
 * (FIX) Prevent line numbers from being copied
 
@@ -67,8 +70,11 @@ LaTex, Visual Basic, CHDL, Wiki, XQ, YAML
 
 == Upgrade Notice ==
 
+= 1.0.5 =
+* Amarkal framework update
+
 = 1.0.4 =
-* (FIX) Prevent line numbers from being copied
+* Prevent line numbers from being copied
 
 = 1.0.3 =
 * Fixed line numbers issue
