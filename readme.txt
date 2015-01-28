@@ -2,7 +2,7 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
