@@ -46,6 +46,8 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 2. Code snippet after Mivhak
 3. General settings section under Mivhak options page
 4. Skin selector under Mivhak options page
+5. Code can be easily edited or removed in the visual editor
+6. The code insertion/edition popup window
 
 == Changelog ==
 
