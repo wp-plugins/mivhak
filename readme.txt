@@ -2,30 +2,34 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.0.7
+Tested up to: 4.1.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight syntax highlighter for WordPress
+A lightweight, editor safe syntax highlighter with real time syntax highlighting and error checking.
 
 == Description ==
 
-**Mivhak** is a lightweight syntax highlighter for WordPress, based on an improved version of *Google-Code-Prettifier*.
+Have you been looking for a syntax highlighter that is safe to use on both the visual and the HTML WordPress editor? What
+about a tool that highlights your syntax *While* writing your code, and also checks for syntax errors?
+
+Well, look no further. *Mivhak* is a lightweight syntax highlighter for WordPress, based on a slightly modified version of the great *Ace Code Editor*.
 Mivhak comes with a simple settings panel that allows the user to setup basic plugin behavior and appearance.
 
-**Feature List:**
+Additionally, code can be easily inserted to both the HTML and the visual editor using a TinyMCE popup the features live syntax highlighting and error checking for 100+ languages.
 
-1. Lightweight (approximately 90kb for JS + CSS including all languages)
-1. Only 3 http requests (script, style and skin)
+**Features**
+
+1. Lightweight - minified CSS and JS, language scripts and themes are loaded on request
+1. Supports 100+ different programming languages
 1. 7 different skins
+1. Visual + HTML editor code insertion buttons
+1. Live syntax highlighting and error checking while writing code
 1. Easy-to-use control panel
-1. Supports 40+ different programming languages: 
-C, C++, C#, Java, Python, SQL, HTML, XML, CSS, Javascript, 
-Makefiles, Rust, Apollo, Basic, Clojure, Erlang, Go, Haskell, 
-Lisp, Scheme, Llvm, Lua, Matlab, MLs:F#, Ocaml, SML, Mumps, 
-Nemerle, Pascal, Protocol buffers, R, S, RD, Scala, TCL, 
-LaTex, Visual Basic, CHDL, Wiki, XQ, YAML
+1. Visual editor placeholders with floating control bar (see screenshots)
+
+
 
 == Installation ==
 
@@ -45,10 +49,16 @@ LaTex, Visual Basic, CHDL, Wiki, XQ, YAML
 
 == Changelog ==
 
+= 1.1.0 =
+* (NEW) Added support for bbPress
+* (NEW) Visual + HTML editor buttons with code writing tools
+* (NEW) Static/dynamic highlighting is now implemented using the great Ace Code Editor
+* (NEW) Visual editor placeholders with floating control bar
+* (UPDATE) Improved CSS
+
 = 1.0.7 =
 * (FIX) Minor CSS fixes (tested on multiple themes)
 * (UPDATE) Amarkal Framework
-
 
 = 1.0.6 =
 * (FIX) Visibility issue in FireFox (thanks zeaks!)
@@ -80,6 +90,9 @@ LaTex, Visual Basic, CHDL, Wiki, XQ, YAML
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Migrated to Ace Editor, multiple new features
 
 = 1.0.7 =
 * Minor CSS fixes
