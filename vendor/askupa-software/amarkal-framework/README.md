@@ -1,17 +1,20 @@
-# Amarkal Framework [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Amarkal Powered](http://www.askupasoftware.com/poweredby.gif)](http://www.askupasoftware.com/)
+# Amarkal Framework 
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Amarkal Powered](http://www.askupasoftware.com/poweredby.gif)](http://www.askupasoftware.com/)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/amarkal/amarkal/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/amarkal/amarkal/?branch=master)
+[![Scrutinizer Build Status](https://scrutinizer-ci.com/g/amarkal/amarkal/badges/build.png?b=master)](https://scrutinizer-ci.com/g/amarkal/amarkal/?branch=master)
 
-- Version: 0.2-alpha
+- Version: 0.3.1-alpha
 - Website: [askupasoftware.com](http://www.askupasoftware.com/)
-- Tested up to WordPress 4.0
+- Tested up to WordPress 4.1
 
 ## Contents
 
 * [Overview](#overview)
 * [Requirements](#requirements)
 * [Installation](#installation)
-	* [Via Git](#via-git)
-	* [Via Composer](#via-composer)
-	* [Manual install](#manual-install)
+    * [Via Git](#via-git)
+    * [Via Composer](#via-composer)
+    * [Manual install](#manual-install)
 * [Updating](#updating)
 
 ## Overview
@@ -22,7 +25,7 @@ This framework is currently in it's alpha stage and is not ready for production.
 
 ## Requirements
 
-- PHP version 5.3 or above
+- PHP version 5.4.3 or above
 - WordPress 3.7 or above
 
 ## Installation
@@ -31,27 +34,27 @@ This framework is currently in it's alpha stage and is not ready for production.
 
 1. Clone the Amarkal Git repository to the desired location:
 
-		git clone git://github.com/amarkal/amarkal.git target-directory
+        git clone git://github.com/amarkal/amarkal.git target-directory
 
-	(Where `target-directory` is your desired folder path.)
+    (Where `target-directory` is your desired folder path.)
 
 ### Via Composer
 
 1. Create a file named composer.json at the root of your project, containing the Amarkal dependency:
 
-		{
-		  "require": {
-		      "askupa-software/amarkal-framework": "dev-master"
-		  }
-		}
+        {
+          "require": {
+              "askupa-software/amarkal-framework": "dev-master"
+          }
+        }
 
 2. Install composer in your project:
 
-		curl -s http://getcomposer.org/installer | php
+        curl -s http://getcomposer.org/installer | php
 
 3. Install dependencies
 
-		php composer.phar install
+        php composer.phar install
 
 ### Manual install 
 

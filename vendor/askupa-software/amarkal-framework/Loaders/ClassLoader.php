@@ -38,10 +38,11 @@ class ClassLoader {
     private $filters = array();
     
     /**
-     * Loads the given class or interface
+     * Loads the given class or interface.
+     * This function is registered by PHP's spl_autoload_register()
      * 
      * @param    string    $class    The name of the class
-     * @return    boolean            True/false if class was loaded
+     * @return   boolean            True/false if class was loaded
      */
     private function load_class( $class ) 
     {
@@ -92,16 +93,30 @@ class ClassLoader {
             {
                 foreach ( $dirs as $dir )
                 {
-                    // Apply filters
-                    foreach( $this->filters[$namespace] as $filter )
-                    {
-                        $file = $filter($class, $namespace, $dir);
-                        
-                        if ( file_exists( $file ) ) 
-                        {
-                            return $file;
-                        }
-                    }
+                    return $this->apply_namespace_filters( $namespace, $class, $dir );
+                }
+            }
+        }
+    }
+    
+    /**
+     * Internally used by find_file() to apply namespace filters.
+     * 
+     * @param string $namespace
+     * @param string $class
+     * @param string $dir
+     * @return string File path
+     */
+    private function apply_namespace_filters( $namespace, $class, $dir )
+    {
+        foreach( $this->filters[$namespace] as $filter )
+        {
+            if( is_callable( $filter ) )
+            {
+                $file = call_user_func_array( $filter, array( $class, $namespace, $dir ) );
+                if ( file_exists( $file ) ) 
+                {
+                    return $file;
                 }
             }
         }
@@ -150,14 +165,16 @@ class ClassLoader {
      *
      * @param bool    $prepend
      */
-    public function register( $prepend = false ) {
+    public function register( $prepend = false ) 
+    {
         spl_autoload_register( array($this, 'load_class'), true, $prepend );
     }
 
     /**
      * Removes this instance from the registered autoloaders.
      */
-    public function unregister() {
+    public function unregister() 
+    {
         spl_autoload_unregister( array( $this, 'load_class' ) );
     }
 }

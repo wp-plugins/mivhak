@@ -1,24 +1,9 @@
 <?php
 
 /**
- * Globally defined constants.
- */
-$defines = array(
-   'AMARKAL_VERSION'       => '0.3',
-   'AMARKAL_DIR'           => plugin_dir_path( __DIR__ ),
-   'AMARKAL_URL'           => plugin_dir_url( __DIR__ ),
-   'AMARKAL_ASSETS_URL'    => plugin_dir_url( __DIR__ ).'Assets/'
-);
-foreach( $defines as $name => $value ) {
-    define( $name , $value );
-}
-
-/**
  * Configuration Array.
  */
 return array(
-    
-    'required_php_version'      => '5.3.0',
     
     /**
      * The list of JavaScript files to load.
@@ -42,7 +27,7 @@ return array(
          */
         'register'  => array(
             array(
-                'handle'        => 'amarkal-script',
+                'handle'        => 'amarkal',
                 'url'           => AMARKAL_ASSETS_URL.'js/amarkal.min.js',
                 'facing'        => array('admin'),
                 'dependencies'  => array('jquery','jquery-ui')
@@ -57,6 +42,12 @@ return array(
                 'handle'        => 'select2',
                 'url'           => AMARKAL_ASSETS_URL.'js/select2.min.js',
                 'facing'        => array('admin'),
+                'dependencies'  => array('jquery')
+            ),
+            array(
+                'handle'        => 'ace-editor',
+                'url'           => 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js',
+                'facing'        => array( 'admin' ),
                 'dependencies'  => array('jquery')
             )
         )
@@ -94,9 +85,19 @@ return array(
                 'facing'    => array( 'admin' )
             ),
             array(
+                'handle'    => 'amarkal-ui',
+                'url'       => AMARKAL_ASSETS_URL.'css/ui.min.css',
+                'facing'    => array( 'admin' )
+            ),
+            array(
                 'handle'    => 'amarkal-options',
                 'url'       => AMARKAL_ASSETS_URL.'css/options.min.css',
                 'facing'    => array( 'admin-admin.php' )
+            ),
+            array(
+                'handle'    => 'amarkal-editor',
+                'url'       => AMARKAL_ASSETS_URL.'css/editor.min.css',
+                'facing'    => array( 'admin-post.php', 'admin-post-new.php' )
             ),
             array(
                 'handle'    => 'select2',

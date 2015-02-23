@@ -8,7 +8,7 @@ namespace Amarkal\UI\Components;
  * Parameters:
  * <ul>
  * <li><b>name</b> <i>string</i> The component's name.</li>
- * <li><b>default</b> <i>number|number[]</i> The component's default value.</li>
+ * <li><b>default</b> <i>string</i> The component's default value.</li>
  * <li><b>disabled</b> <i>boolean</i> True to disabled component. False otherwise.</li>
  * <li><b>placeholder</b> <i>string</i> Text to be used when the input is empty.</li>
  * <li><b>filter</b> <i>function</i> Filter callback function, accepts the value as an argument.</li>
@@ -44,19 +44,19 @@ implements \Amarkal\UI\ValueComponentInterface,
            \Amarkal\UI\FilterableComponentInterface,
            \Amarkal\UI\ValidatableComponentInterface
 {
-    public function default_settings() 
+    public function default_model() 
     {
         return array(
             'name'          => '',
             'disabled'      => false,
             'default'       => '',
-            'placeholder'   => 'Enter text...',
+            'placeholder'   => '',
             'filter'        => function( $v ) { return $v; },
             'validation'    => function( $v, &$e ) { return true; }
         );
     }
     
-    public function required_settings() 
+    public function required_parameters() 
     {
         return array('name');
     }
@@ -66,7 +66,7 @@ implements \Amarkal\UI\ValueComponentInterface,
      */
     public function get_default_value() 
     {
-        return $this->config['default'];
+        return $this->model['default'];
     }
 
     /**
@@ -74,7 +74,7 @@ implements \Amarkal\UI\ValueComponentInterface,
      */
     public function get_name() 
     {
-        return $this->config['name'];
+        return $this->model['name'];
     }
 
     /**
@@ -90,7 +90,7 @@ implements \Amarkal\UI\ValueComponentInterface,
      */
     public function is_disabled() 
     {
-        return $this->config['disabled'];
+        return $this->model['disabled'];
     }
 
     /**
@@ -98,7 +98,7 @@ implements \Amarkal\UI\ValueComponentInterface,
      */
     public function apply_filter( $value ) 
     {
-        $callable = $this->config['filter'];
+        $callable = $this->model['filter'];
 
         if( is_callable( $callable ) ) 
         {
@@ -111,7 +111,7 @@ implements \Amarkal\UI\ValueComponentInterface,
      */
     public function validate( $value, &$error ) 
     {   
-        $callable = $this->config['validation'];
+        $callable = $this->model['validation'];
         
         if( is_callable( $callable ) ) 
         {

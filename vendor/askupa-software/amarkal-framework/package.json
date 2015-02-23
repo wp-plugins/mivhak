@@ -1,13 +1,16 @@
 {
   "name": "amarkal",
-  "version": "0.1.0",
+  "version": "0.3.2",
+  "php": "5.4.3",
   "description": "Development framework for WordPress.",
   "author": "Askupa Software",
   "main": "GruntFile.js",
   "directories": {
     "css": "Assets/css",
     "js": "Assets/js",
-    "sass": "Assets/sass"
+    "sass": "Assets/sass",
+    "img": "Assets/img",
+    "svg": "Assets/svg"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

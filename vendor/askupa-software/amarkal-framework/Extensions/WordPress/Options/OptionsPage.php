@@ -35,7 +35,17 @@ class OptionsPage
     private $components;
     
     /**
-     * Updater object. Used to update component values.
+     *The form object. Used to render the form and validate component 
+     * name uniqueness.
+     * 
+     * @var Amarkal\Form\Form 
+     */
+    private $form;
+    
+    /**
+     * Updater object, referenced from the form object. 
+     * Used to update component values.
+     * 
      * @var Amarkal\Form\Updater
      */
     private $updater;
@@ -57,9 +67,8 @@ class OptionsPage
         $this->config       = new OptionsConfig( $config );
         $this->components   = $this->config->get_fields();
         $this->page         = $this->create_page();
-        $this->updater      = new \Amarkal\Form\Updater($this->components);
-        Notifier::reset();
-        State::set('errors', array());
+        $this->form         = new \Amarkal\Form\Form( $this->components );
+        $this->updater      = $this->form->updater;
     }
     
     /**
@@ -87,7 +96,7 @@ class OptionsPage
     /**
      * Create a new AdminPage.
      * 
-     * @return AdminPage
+     * @return \Amarkal\Extensions\WordPress\Admin\AdminPage
      */
     private function create_page()
     {
@@ -128,6 +137,8 @@ class OptionsPage
     private function preprocess()
     {
         $this->do_action('afw_options_pre_process');
+        Notifier::reset();
+        State::set('errors', array());
         $this->update();
         $this->do_action('afw_options_post_process');
     }
@@ -269,9 +280,9 @@ class OptionsPage
     {
         $var_name = "";
         
-        if( isset($this->config->settings['global_variable']) )
+        if( null != $this->config->global_variable )
         {
-            $var_name = $this->config->settings['global_variable'];
+            $var_name = $this->config->global_variable;
         }
         else
         {
@@ -281,6 +292,9 @@ class OptionsPage
         $GLOBALS[$var_name] = $this->get_old_instance();
     }
     
+    /**
+     * @param string $hook
+     */
     private function do_action( $hook )
     {
         // Make sure the action has not been called before

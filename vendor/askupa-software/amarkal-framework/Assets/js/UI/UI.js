@@ -54,3 +54,53 @@ Amarkal.UI.register = function( obj )
 {
     Amarkal.UI.components.push(obj);
 };
+
+/**
+ * Set the given value to the given component.
+ * 
+ * @param {Node} Amarkal UI component DOM Node
+ */
+Amarkal.UI.setValue = function( component, value )
+{
+    for( var i = 0; i < Amarkal.UI.components.length; i++ )
+    {
+        // Find the corresponding registered UI component script
+        if( $(component).hasClass( Amarkal.UI.components[i].wrapper.replace('.','') ) )
+        {
+            Amarkal.UI.components[i].setValue( component, value );
+        }
+    }
+};
+
+/**
+ * Get a UI component configuration object by a DOM Node.
+ * 
+ * @param {Node} component Amarkal UI component DOM Node
+ */
+Amarkal.UI.getComponent = function( component )
+{
+    for( var i = 0; i < Amarkal.UI.components.length; i++ )
+    {
+        // Find the corresponding registered UI component script
+        if( $(component).hasClass( Amarkal.UI.components[i].wrapper.replace('.','') ) )
+        {
+            return Amarkal.UI.components[i];
+        }
+    }
+    return null;
+};
+
+/**
+ * Refresh UI components.
+ * Some UI components run a special script when shown. This function
+ * calls the 'onshow' function of the UI component, if applicable.
+ */
+Amarkal.UI.refresh = function()
+{
+    $.each(Amarkal.UI.components, function(i, c){
+        if(c.hasOwnProperty('onShow'))
+        {
+            c.onShow();
+        }
+    });
+};

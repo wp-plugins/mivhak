@@ -8,8 +8,8 @@ namespace Amarkal;
  * To use the autolaoder, simply require this file as a part of your
  * bootstrap process.
  */
-class Autoloader {
-    
+class Autoloader 
+{    
     /**
      * Amarkal configuration (from file Core/config.inc.php)
      * @var mixed[] Amarkal configuration. 
@@ -21,16 +21,29 @@ class Autoloader {
      */
     static function init()
     {
+        Autoloader::generate_defines();
         self::$config = include('Core/config.inc.php');
-        
         Autoloader::register_classes();
         Autoloader::register_assets();
     }
     
     /**
+     * Generate global defines using package.json
+     */
+    public static function generate_defines()
+    {
+        $p = \EnvironmentValidator::get_package();
+        define( 'AMARKAL_VERSION' , $p->version );
+        define( 'AMARKAL_DIR' , dirname( __FILE__ ) );
+        define( 'AMARKAL_URL' , \plugin_dir_url( __FILE__ ) );
+        define( 'AMARKAL_ASSETS_URL' , \plugin_dir_url( __FILE__ ).'Assets/' );
+    }
+    
+    /**
      * Register the class autoloader for Amarkal classes
      */
-    public static function register_classes() {
+    public static function register_classes() 
+    {
         spl_autoload_register(array(__CLASS__, 'autoload'));        
     }
     
@@ -38,10 +51,10 @@ class Autoloader {
      * Loads the given class or interface
      * 
      * @param    string    $class    The name of the class
-     * @return    boolean            True/false if class was loaded
+     * @return    null|boolean            True/false if class was loaded
      */
-    public static function autoload( $class ) {
-        
+    public static function autoload( $class ) 
+    {    
         // Verify that the base namespace is Amarkal
         if (0 !== strpos($class, __NAMESPACE__)) {
             return;
@@ -74,8 +87,8 @@ class Autoloader {
     /**
      * Register Amarkal Scripts and Stylesheets
      */
-    public static function register_assets() {
-        
+    public static function register_assets() 
+    {    
         $ac = new \Amarkal\Loaders\AssetLoader();
         
         foreach ( self::$config['css']['register'] as $asset ) {

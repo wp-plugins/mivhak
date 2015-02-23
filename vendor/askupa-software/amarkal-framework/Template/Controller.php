@@ -8,6 +8,46 @@ namespace Amarkal\Template;
 abstract class Controller
 {  
     /**
+     * An associative array holding the model to be used by this controller
+     * @var array 
+     */
+    protected $model;
+    
+    /**
+     * Create a new web element controller
+     * @param array $model
+     */
+    public function __construct( array $model ) 
+    {
+        $this->model = array_merge( $this->default_model(), $model );
+    }
+    
+    /**
+     * Get model parameter value by name.
+     * 
+     * @param string $name The parameter's name.
+     * 
+     * @return mixed the parameter's value.
+     */
+    public function __get( $name ) 
+    {
+        return $this->model[$name];
+    }
+    
+    /**
+     * Set model parameter by name.
+     * 
+     * @param string $name The parameter's name.
+     * @param mixed $value The value to set.
+     * 
+     * @return mixed the settings' parameter value.
+     */
+    public function __set( $name, $value )
+    {
+        $this->model[$name] = $value;
+    }
+    
+    /**
      * Render the template with the local properties.
      * 
      * @return string                        The rendered template.
@@ -43,12 +83,22 @@ abstract class Controller
      */
     protected function get_script_path()
     {
-        if( !isset( $this->script_path ) )
+        if( null == $this->script_path )
         {
             $class_name =  substr( get_called_class() , strrpos( get_called_class(), '\\') + 1);
             $this->script_path = $this->get_dir() . '/' . $class_name . '.phtml';
         }
         return $this->script_path;
+    }
+    
+    /**
+     * Set a custom script path.
+     * 
+     * @param string $path
+     */
+    public function set_script_path( $path )
+    {
+        $this->script_path = $path;
     }
     
     /**
@@ -60,5 +110,14 @@ abstract class Controller
     {
         $rc = new \ReflectionClass(get_class($this));
         return dirname($rc->getFileName());
+    }
+    
+    /**
+     * This method should be overriden by child class
+     * @return array
+     */
+    public function default_model()
+    {
+        return array();
     }
 }

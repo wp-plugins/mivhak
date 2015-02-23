@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   Mivhak Syntax Highlighter
- * @date      Tue Jan 20 2015 15:56:50
+ * @date      Mon Feb 23 2015 09:49:43
  * @version   1.0.7
  * @author    Askupa Software <contact@askupasoftware.com>
  * @link      http://products.askupasoftware.com/mivhak
@@ -11,8 +11,9 @@
 namespace Mivhak;
 
 use Amarkal\Extensions\WordPress\Plugin;
-use Amarkal\Loaders;
+use Amarkal\Extensions\WordPress\Editor;
 use Amarkal\Extensions\WordPress\Options;
+use Amarkal\Loaders;
 
 class Mivhak extends Plugin\AbstractPlugin {
     
@@ -23,13 +24,21 @@ class Mivhak extends Plugin\AbstractPlugin {
         $this->generate_defines();
         
         // Register an options page
-        $this->options = new Options\OptionsPage( include('configs/OptionsConfig.php') );
+        $this->options = new Options\OptionsPage( include('configs/options.php') );
         $this->options->register();
+        
+        // Add a popup button to the rich editor
+        Editor\Editor::add_button( include('configs/editor.php') );
         
         $this->register_assets();
         
         add_filter( 'the_content', array( __CLASS__, 'format' ), 0 );
         add_filter( 'comment_text', array( __CLASS__, 'format' ), 0 );
+        add_filter('bbp_get_topic_content', array( __CLASS__, 'format' ), 0 );
+        add_filter('bbp_get_reply_content', array( __CLASS__, 'format' ), 0 );
+        
+        add_filter( 'tiny_mce_before_init', array( __CLASS__, 'format_TinyMCE' ), 0 );
+        add_filter( 'mce_css', array( __CLASS__, 'editor_css' ) );
     }
     
     public function generate_defines()
@@ -108,6 +117,24 @@ class Mivhak extends Plugin\AbstractPlugin {
         return preg_replace_callback($pattern, function($matches){
             return $matches[1].esc_html($matches[2]).$matches[3];
         }, $content);
+    }
+    
+    /**
+     * Remove the autop filter from TinyMCE editor. This allows
+     * writing HTML code in the visual editor (prevents the removal of p tags etc)
+     * 
+     * @see http://codex.wordpress.org/TinyMCE
+     */
+    static function format_TinyMCE( $in ) 
+    {
+	$in['wpautop'] = false;
+	return $in;
+    }
+    
+    function editor_css( $wp ) 
+    {
+        $wp .= ',' . CSS_URL.'/editor.min.css';
+        return $wp;
     }
 }
 new Mivhak();

@@ -24,12 +24,8 @@ if( !function_exists('mivhak_bootstrap') )
 {
     function mivhak_bootstrap()
     {
-        
         $validator = require_once 'vendor/askupa-software/amarkal-framework/EnvironmentValidator.php';
-        if ( $validator->is_valid( 'plugin' ) )
-        { 
-            require_once 'app/Mivhak.php';
-        }
+        $validator->add_plugin( 'Mivhak Syntax Highlighter', dirname( __FILE__ ).'/app/Mivhak.php' );
     }
-    add_action( 'plugins_loaded', 'mivhak_bootstrap' );
 }
+mivhak_bootstrap();
