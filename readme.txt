@@ -30,7 +30,6 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 1. Visual editor placeholders with floating control bar (see screenshots)
 
 
-
 == Installation ==
 
 1. Download and activate the plugin.
