@@ -1,7 +1,7 @@
 <?php
 /**
  * @package   Mivhak Syntax Highlighter
- * @date      Mon Feb 23 2015 09:54:28
+ * @date      Tue Feb 24 2015 00:26:03
  * @version   1.1.0
  * @author    Askupa Software <contact@askupasoftware.com>
  * @link      http://products.askupasoftware.com/mivhak
