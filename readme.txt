@@ -3,7 +3,7 @@ Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,10 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 
 == Changelog ==
 
+= 1.1.1 =
+* (UPDATE) Amarkal Framework v0.3.3
+* (FIX) Fixed an issue that was causing line break to be removed when switching between visual and HTML editor.
+
 = 1.1.0 =
 * (NEW) Added support for bbPress
 * (NEW) Visual + HTML editor buttons with code writing tools
@@ -91,6 +95,9 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+* Updated framework, minor bug fixes
 
 = 1.1.0 =
 * Migrated to Ace Editor, multiple new features
