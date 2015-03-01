@@ -187,7 +187,7 @@
                 on_insert: function( editor, values ) {
                     var args = editor.windowManager.getParams();
                     editor.dom.remove( editor.selection.getNode(), false );
-                    editor.insertContent( Amarkal.Editor.parseTemplate( args.template, values ) );
+                    editor.insertContent( Amarkal.Editor.Form.parseTemplate( args.template, values ) );
                 },
                 values: {
                     lang: node.attributes['class'].value.match(/lang-([^ ]+)/)[1],
