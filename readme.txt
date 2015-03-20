@@ -3,7 +3,7 @@ Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,14 +21,21 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 
 **Features**
 
-1. Lightweight - minified CSS and JS, language scripts and themes are loaded on request
-1. Supports 100+ different programming languages
-1. 7 different skins
-1. Visual + HTML editor code insertion buttons
-1. Live syntax highlighting and error checking while writing code
-1. Easy-to-use control panel
-1. Visual editor placeholders with floating control bar (see screenshots)
+* Lightweight - minified CSS and JS, language scripts and themes are loaded on request
+* Supports 100+ different programming languages
+* 36 different skins
+* Visual + HTML editor code insertion buttons
+* Live syntax highlighting and error checking while writing code
+* Easy-to-use control panel
+* Visual editor placeholders with floating control bar (see screenshots)
+* Auto code highlighting by tag name
+* Inline and block code widgets
 
+**Useful Links**
+
+* [Official Page](http://products.askupasoftware.com/mivhak/)
+* [Examples](http://products.askupasoftware.com/mivhak/examples/)
+* [Documentation](http://products.askupasoftware.com/mivhak/documentation/)
 
 == Installation ==
 
@@ -50,9 +57,14 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 
 == Changelog ==
 
+= 1.2.0 =
+* (UPDATE) Amarkal Framework v0.3.4
+* (UPDATE) Completed migration to Ace Editor
+* (UPDATE) Slightly modified visual appearance
+
 = 1.1.1 =
 * (UPDATE) Amarkal Framework v0.3.3
-* (FIX) Fixed an issue that was causing line break to be removed when switching between visual and HTML editor.
+* (FIX) Fixed an issue that was causing line breaks to be removed when switching between visual and HTML editor.
 
 = 1.1.0 =
 * (NEW) Added support for bbPress
@@ -95,6 +107,9 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+* Completed migration to Ace Editor
 
 = 1.1.1 =
 * Updated framework, minor bug fixes
