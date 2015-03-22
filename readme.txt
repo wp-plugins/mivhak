@@ -3,7 +3,7 @@ Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,16 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 
 == Changelog ==
 
+= 1.2.1 =
+* (NEW) Selected text is used as input for the popup code editor
+* (NEW) Option to select a default language when no language has been detected
+* (NEW) Programming languages pretty names (As opposed to all uppercase names as it has been until now)
+* (FIX) Extra lines/spaces will be trimmed
+* (FIX) Visual Editor issue that was preventing code blocks without the class attribute from being edited
+* (FIX) Non-breaking space issue that was treated as an invalid character
+* (FIX) A bug that was causing line breaks to be added when switching between the visual and the HTML editors
+* (FIX) CSS issues
+
 = 1.2.0 =
 * (UPDATE) Amarkal Framework v0.3.4
 * (UPDATE) Completed migration to Ace Editor
@@ -107,6 +117,9 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+* New features and minor bug fixes
 
 = 1.2.0 =
 * Completed migration to Ace Editor
