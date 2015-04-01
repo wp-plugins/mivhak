@@ -3,7 +3,7 @@ Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,11 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 6. The code insertion/edition popup window
 
 == Changelog ==
+
+= 1.2.3 =
+* (FIX) Fixed some notices that were showing when WP_DEBUG was set to true
+* (FIX) Uninstalling the plugin now removes any traces from the database
+* (NEW) Add an option the write custom CSS (under Mivhak->appearance)
 
 = 1.2.2 =
 * (FIX) PHP Strict Standards issue
@@ -120,6 +125,12 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+* New features and minor bug fixes
+
+= 1.2.2 =
+* Improved code formatting
 
 = 1.2.1 =
 * New features and minor bug fixes
