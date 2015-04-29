@@ -2,8 +2,8 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 4.1.1
-Stable tag: 1.2.3
+Tested up to: 4.2.1
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 6. The code insertion/edition popup window
 
 == Changelog ==
+
+= 1.2.4 =
+* (UPDATE) Amarkal Framework v0.3.6
+* (NEW) Added <pre> quicktag to the HTML editor
+* (FIX) Improved the way HTML formatting is preserved when switching between editors
+* Tested under WordPress 4.2.1
 
 = 1.2.3 =
 * (FIX) Fixed some notices that were showing when WP_DEBUG was set to true
