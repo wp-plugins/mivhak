@@ -59,7 +59,7 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 
 = 1.2.4 =
 * (UPDATE) Amarkal Framework v0.3.6
-* (NEW) Added <pre> quicktag to the HTML editor
+* (NEW) Added &lt;pre&gt; quicktag to the HTML editor
 * (FIX) Improved the way HTML formatting is preserved when switching between editors
 * Tested under WordPress 4.2.1
 
