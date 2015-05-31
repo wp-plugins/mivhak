@@ -2,8 +2,8 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 4.2.1
-Stable tag: 1.2.4
+Tested up to: 4.2.2
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 6. The code insertion/edition popup window
 
 == Changelog ==
+
+= 1.2.5 =
+* (UPDATE) Bumped up ace version to 1.1.9
+* (NEW) Added 12 new languages: ABC, AppleScript, Eiffel, Elixir, Elm, G-Code, gitignore, io, Lean, Mask, MIPS Assembler and Vala.
+* (FIX) Removed 2 unsupported languages: HTML Completions, MUSHCode High Rules.
+* (FIX) Inline code element issue.
 
 = 1.2.4 =
 * (UPDATE) Amarkal Framework v0.3.6
