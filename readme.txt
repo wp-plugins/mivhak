@@ -2,8 +2,8 @@
 Contributors: Askupa Software
 Tags: syntax highlighter, code prettifier, highlighting, syntax, google-code-prettify, code snippet, formatting, programming, software development.
 Requires at least: 3.0
-Tested up to: 4.2.2
-Stable tag: 1.2.5
+Tested up to: 4.2.3
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,11 @@ Additionally, code can be easily inserted to both the HTML and the visual editor
 6. The code insertion/edition popup window
 
 == Changelog ==
+
+= 1.2.6 =
+* (FIX) Move the cursor out of the inserted element after inserting
+* (FIX) Issue that was breaking the editing functionality in the visual editor
+* Tested under WordPress 4.2.3
 
 = 1.2.5 =
 * (UPDATE) Bumped up ace version to 1.1.9
